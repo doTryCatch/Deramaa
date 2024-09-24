@@ -8,11 +8,11 @@ A modern couple matchmaking app designed to connect hearts effortlessly. Built w
 
 ```bash
 
-git clone `git@github.com:doTryCatch/mingle.git`
+git clone `git@github.com:doTryCatch/Deramaa.git`
 
 Navigate to the current directory.
 
-cd mingle
+cd Deramaa
 
 run command:
 
