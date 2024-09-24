@@ -1,0 +1,10 @@
+echo "validation eslint and prettier"
+npx eslint '**/*.{js,jsx,ts,tsx}' --quiet --fix || {
+    echo "😥 Eslint error Occured.... First fix the eslint error mentioned above then commit will be possible"
+    exit 1
+}
+echo "😀😀 Eslint is good to go...."
+
+echo "Formatting the code with Prettier..."
+npx prettier --write '**/*.{json,js,jsx,ts,tsx,html}' --ignore-unknown
+echo "😎😎 Everything is okay. No issues detected. Ready to commit!💪"
