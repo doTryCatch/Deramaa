@@ -18,5 +18,5 @@ export default async function middleware(req: NextRequest) {
 
 // Specify which paths the middleware should be applied to
 export const config = {
-  matcher: ["/"], // Apply to specific paths
+  matcher: ["/bookingArea"], // Apply to specific paths
 };

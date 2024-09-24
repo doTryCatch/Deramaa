@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 // import Image from "next/image";
+import Navbar from "@/components/navbar";
 export default function Home() {
   const Login = true;
   const router = useRouter();
@@ -10,7 +11,8 @@ export default function Home() {
   }, [router, Login]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="main-body-container">
+      <Navbar />
       <h1>This is the main page after login</h1>
     </main>
   );
