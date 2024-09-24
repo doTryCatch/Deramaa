@@ -21,7 +21,7 @@ async function LoginPage() {
     if (res.ok) {
       console.log(res);
 
-      route.push("/Main");
+      route.push("/Home");
     } else {
       alert("Invalid credentials");
     }
