@@ -1,4 +1,18 @@
-A modern couple matchmaking app designed to connect hearts effortlessly. Built with a focus on user experience and smart algorithms to create meaningful connections.
+# Deramaa
+
+**Deramaa** is an open-source web application designed to simplify the process of finding and booking rental properties. Whether you're searching for short-term stays or long-term housing, Deramaa offers an intuitive interface to browse available listings, apply filters based on your preferences, and book properties with ease.
+
+## Key Features
+
+- **Property Browsing**: Explore a wide variety of rental homes and apartments.
+- **Advanced Filters**: Narrow down your search by location, price, and amenities.
+- **Booking Management**: Seamlessly book properties and manage reservations.
+- **User-Friendly Interface**: A responsive design for both desktop and mobile users.
+- **Open-Source Contribution**: We welcome contributions from the community to enhance features and improve user experience.
+
+---
+
+Feel free to contribute, raise issues, or submit feature requests to help make Deramaa better for everyone!
 
 ## Requirements
 
