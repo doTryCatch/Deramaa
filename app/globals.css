@@ -2,30 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    --background: 255, 255, 255;
+  --background: 238, 252, 250;
 }
 
+/* background-color EEFCFA */
+
 @media (prefers-color-scheme: dark) {
-     :root {
-        --background-start-rgb: 0, 0, 0;
-    }
+  :root {
+    --background-start-rgb: 0, 0, 0;
+  }
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background));
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background));
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* scroll-bar css sytle here  */
+
+/* In your CSS file */
+
+/* swiper css */
+
+.slick-slide {
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+  padding: 10px 0px;
+  max-width: 1200px;
+  min-width: fit-content;
+}
+
+/* .slick-slide > div {
+  max-width: 1200px;
+  margin-left: 0 20px;
+  padding: 10px 0px;
+  width: fit-content;
+} */
+
+/* In your CSS file */
 
 /* page content css  */
 
-.navbar-container {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+.navbar-container,
+.filters {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.box-shadow {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.box-shadow-2 {
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+  .text-balance {
+    text-wrap: balance;
+  }
 }

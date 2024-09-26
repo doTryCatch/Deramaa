@@ -1,0 +1,14 @@
+{
+  "locations": [
+    { "id": 1, "name": "Boudhanath" },
+    { "id": 2, "name": "Bhaktapur Durbar" },
+    { "id": 3, "name": "Garden of Dreams" },
+    { "id": 4, "name": "Kathmandu Durbar" },
+    { "id": 5, "name": "Kopan Monastery" },
+    { "id": 6, "name": "Narayanhiti Palace" },
+    { "id": 7, "name": "Pashupatinath" },
+    { "id": 8, "name": "Patan Durbar" },
+    { "id": 9, "name": "Swayambhunath" },
+    { "id": 10, "name": "Thamel" }
+  ]
+}

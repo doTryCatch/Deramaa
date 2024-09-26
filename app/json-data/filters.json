@@ -1,0 +1,53 @@
+{
+  "Items": [
+    {
+      "id": "sort-by",
+      "label": "Sort By",
+      "options": [
+        { "value": "popularity", "label": "Popularity" },
+        { "value": "price-low", "label": "Price Low to High" },
+        { "value": "price-high", "label": "Price High to Low" },
+        { "value": "rating", "label": "Rating" }
+      ]
+    },
+    {
+      "id": "price",
+      "label": "Price",
+      "options": [
+        { "value": "low", "label": "Low" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "high", "label": "High" }
+      ]
+    },
+    {
+      "id": "Room",
+      "label": "Rooms",
+      "options": [
+        { "value": "1", "label": "1 Room" },
+        { "value": "2", "label": "2 Rooms" },
+        { "value": "3", "label": "3 Rooms" },
+        { "value": "4+", "label": "4+ Rooms" }
+      ]
+    },
+    {
+      "id": "Type",
+      "label": "Type",
+      "options": [
+        { "value": "apartment", "label": "Apartment" },
+        { "value": "house", "label": "House" },
+        { "value": "studio", "label": "Studio" },
+        { "value": "villa", "label": "Villa" }
+      ]
+    },
+    {
+      "id": "NearBy",
+      "label": "Nearby",
+      "options": [
+        { "value": "park", "label": "Park" },
+        { "value": "school", "label": "School" },
+        { "value": "hospital", "label": "Hospital" },
+        { "value": "supermarket", "label": "Supermarket" }
+      ]
+    }
+  ]
+}

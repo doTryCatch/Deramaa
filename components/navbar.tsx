@@ -1,20 +1,14 @@
 import React from "react";
-import Image from "next/image";
+
 function Navbar() {
   return (
     <section className="navbar-container bg-white">
       <nav className="navbar flex items-center text-black justify-between">
-        <div className="navbar-logo flex-grow  p-3">
-          <Image
-            scr={""}
-            alt="logo"
-            width={100}
-            height={50}
-            className="mx-10"
-          />
+        <div className="navbar-logo flex justify-center items-center flex-grow h-[10vh] w-[20rem]  p-3">
+          <img src="next.svg" alt="" style={{ width: "100%", height: "70%" }} />
         </div>
         <div className="flex-grow">
-          <ul className="navbar-menu flex  space-x-10 ">
+          <ul className="navbar-menu flex  space-x-8 ">
             <li className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75">
               Find Rentals
             </li>
