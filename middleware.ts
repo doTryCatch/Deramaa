@@ -1,7 +1,7 @@
 // middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { verifyToken } from "@/app/utils/jsonWebToken"; // Adjust the import path as needed
+import { verifyToken } from "@/app/api/utils/jsonWebToken"; // Adjust the import path as needed
 
 export default async function middleware(req: NextRequest) {
   const token = req.cookies.get("authToken")?.value || "";

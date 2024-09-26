@@ -1,5 +1,7 @@
 import React from "react";
-import Map from "./map";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("./map"), { ssr: false });
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

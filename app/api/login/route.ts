@@ -1,6 +1,6 @@
 // app/api/login/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { generateToken } from "@/app/utils/jsonWebToken";
+import { generateToken } from "@/app/api/utils/jsonWebToken";
 import { serialize } from "cookie";
 
 export async function POST(req: NextRequest) {
@@ -25,12 +25,12 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json(
     { success: false, message: "Invalid credentials" },
-    { status: 401 },
+    { status: 401 }
   );
 }
 export async function GET() {
   return NextResponse.json(
     { message: "GET method not supported" },
-    { status: 405 },
+    { status: 405 }
   );
 }
