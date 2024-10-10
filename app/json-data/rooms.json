@@ -91,6 +91,98 @@
           "profileImage": "https://example.com/images/host2.jpg"
         }
       }
+    },
+    {
+      "id": "2",
+      "card": {
+        "title": "Spacious 2-Bedroom Apartment",
+        "shortDescription": "Ideal for families with great views.",
+        "price": 2200,
+        "currency": "USD",
+        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
+        "ratings": {
+          "averageRating": 4.5,
+          "totalReviews": 75
+        }
+      },
+      "details": {
+        "description": "A large apartment ideal for families or groups, with great views and nearby parks.",
+        "location": {
+          "address": "456 Elm St, Suburbia",
+          "city": "Metropolis",
+          "state": "NY",
+          "zipCode": "10002"
+        },
+        "availability": {
+          "status": "available",
+          "availableFrom": "2024-11-01"
+        },
+        "amenities": [
+          "Wi-Fi",
+          "Air Conditioning",
+          "Full Kitchen",
+          "Pet Friendly",
+          "Gym Access"
+        ],
+        "images": [
+          "https://example.com/images/room2_1.jpg",
+          "https://example.com/images/room2_2.jpg"
+        ],
+        "host": {
+          "name": "Jane Smith",
+          "contact": {
+            "phone": "+0987654321",
+            "email": "janesmith@example.com"
+          },
+          "profileImage": "https://example.com/images/host2.jpg"
+        }
+      }
+    },
+    {
+      "id": "2",
+      "card": {
+        "title": "Spacious 2-Bedroom Apartment",
+        "shortDescription": "Ideal for families with great views.",
+        "price": 2200,
+        "currency": "USD",
+        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
+        "ratings": {
+          "averageRating": 4.5,
+          "totalReviews": 75
+        }
+      },
+      "details": {
+        "description": "A large apartment ideal for families or groups, with great views and nearby parks.",
+        "location": {
+          "address": "456 Elm St, Suburbia",
+          "city": "Metropolis",
+          "state": "NY",
+          "zipCode": "10002"
+        },
+        "availability": {
+          "status": "available",
+          "availableFrom": "2024-11-01"
+        },
+        "amenities": [
+          "Wi-Fi",
+          "Air Conditioning",
+          "Full Kitchen",
+          "Pet Friendly",
+          "Gym Access"
+        ],
+        "images": [
+          "https://example.com/images/room2_1.jpg",
+          "https://example.com/images/room2_2.jpg"
+        ],
+        "host": {
+          "name": "Jane Smith",
+          "contact": {
+            "phone": "+0987654321",
+            "email": "janesmith@example.com"
+          },
+          "profileImage": "https://example.com/images/host2.jpg"
+        }
+      }
     }
   ]
 }

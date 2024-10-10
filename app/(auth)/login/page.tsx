@@ -21,7 +21,7 @@ async function LoginPage() {
     if (res.ok) {
       console.log(res);
 
-      route.push("/Home");
+      route.push("/");
     } else {
       alert("Invalid credentials");
     }
@@ -42,7 +42,7 @@ async function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button type="submit" className="text-white">
+        <button type="submit" className="">
           Login
         </button>
       </form>
