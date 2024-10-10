@@ -1,30 +1,60 @@
-import React from "react";
-
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 function Navbar() {
+  const [isNav, setNav] = useState(false);
+  const handleNavIconClick = () => {
+    setNav(isNav ? false : true);
+    console.log(isNav);
+  };
   return (
     <section className="navbar-container bg-white">
-      <nav className="navbar flex items-center text-black justify-between">
-        <div className="navbar-logo flex justify-center items-center flex-grow h-[10vh] w-[20rem]  p-3">
+      <nav className="navbar flex items-center text-black justify-between  h-auto ">
+        <div className="navbar-logo bg-pink-200 flex justify-center  items-center md:flex-grow md:h-[10vh] h-[6vh] ml-6 md:ml-0   md:w-[20rem] w-auto  p-3">
           <img src="next.svg" alt="" style={{ width: "100%", height: "70%" }} />
         </div>
-        <div className="flex-grow">
-          <ul className="navbar-menu flex  space-x-8 ">
-            <li className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75">
+        <div className="md:flex-grow mr-6 md:mr-0">
+          <div className="navToogle md:hidden">
+            <Image
+              src={"https://cdn-icons-png.flaticon.com/128/1828/1828859.png"}
+              alt="navbar-icon"
+              width={20}
+              height={20}
+              onClick={() => {
+                handleNavIconClick();
+              }}
+            />
+          </div>
+          <ul className={"navbar-menu md:flex  space-x-8 hidden "}>
+            <Link
+              href="/"
+              className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+            >
               Find Rentals
-            </li>
-            <li className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75">
+            </Link>
+            <Link
+              href="/propertyDetails"
+              className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+            >
               Property Deals
-            </li>
-            <li className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75">
+            </Link>
+            <Link
+              href="/agents"
+              className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+            >
               Become Agent
-            </li>
-            <li className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75">
+            </Link>
+            <Link
+              href="/about"
+              className="navbar-item flex-row cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+            >
               About Us
-            </li>
+            </Link>
           </ul>
         </div>
 
-        <div className="navbar-buttons flex  justify-end flex-grow  space-x-6 mx-4 ">
+        <div className="navbar-buttons md:flex  justify-end flex-grow  space-x-6 mx-4 hidden">
           <button className="navbar-post-btn  text-black  border-[#00B7CB] border-solid border-2 hover:bg-[#00B7CB] hover:text-blue-950 px-6 py-1 flex-row-reverse rounded-full ">
             Post Demand
           </button>
@@ -33,6 +63,40 @@ function Navbar() {
           </button>
         </div>
       </nav>
+      <div
+        className={
+          "navElemetForMobile  m-4 text-center " +
+          (isNav ? "center " : "hidden")
+        }
+      >
+        <ul className="space-y-4 my-4 w-full flex-col">
+          <hr />
+          <Link
+            href="/"
+            className="navbar-item  cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+          >
+            <p>Find Rentals</p>
+          </Link>
+          <Link
+            href="/propertyDetails"
+            className="navbar-item  cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+          >
+            <p>Property Deals</p>
+          </Link>
+          <Link
+            href="/agents"
+            className="navbar-item  cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+          >
+            <p>Become Agent</p>
+          </Link>
+          <Link
+            href="/about"
+            className="navbar-item  cursor-pointer hover:scale-110 transition-all ease-in-out duration-75"
+          >
+            <p>About Us</p>
+          </Link>
+        </ul>
+      </div>
     </section>
   );
 }

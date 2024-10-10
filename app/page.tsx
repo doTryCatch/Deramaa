@@ -1,9 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react"; // import Image from "next/image";
-import Navbar from "@/components/navbar";
+
 import SearchAndFilters from "@/components/searchWithFilters";
 import Hero from "@/components/hero";
+import { SearchProvider } from "./context/searchLocation";
 export default function Home() {
   const Login = true;
   const router = useRouter();
@@ -13,8 +14,9 @@ export default function Home() {
 
   return (
     <main className="main-body-container">
-      <Navbar />
-      <SearchAndFilters />
+      <SearchProvider>
+        <SearchAndFilters />
+      </SearchProvider>
 
       <Hero />
     </main>

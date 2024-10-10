@@ -2,10 +2,13 @@ import React from "react";
 import room from "@/app/json-data/rooms.json";
 const RoomCard = () => {
   return (
-    <div className="rooms-container">
-      {room.rooms.map((room) => (
-        <div className="border border-gray-300 rounded-lg shadow-md overflow-hidden w-[95%] m-4">
-          <div className="relative h-60">
+    <div className="rooms-container p-2 space-y-8 ">
+      {room.rooms.map((room, key) => (
+        <div
+          className="border border-gray-300 bg-white rounded-lg shadow-md overflow-hidden w-full cursor-pointer"
+          key={key}
+        >
+          <div className="relative h-48">
             <img
               src={room.card.image}
               alt={room.card.title}

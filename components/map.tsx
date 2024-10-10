@@ -1,36 +1,47 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import { useSearchContext } from "@/app/context/searchLocation";
+
+interface JumpToLocationProps {
+  latitude: string;
+  longitude: string;
+}
+
+const JumpToLocation = ({ latitude, longitude }: JumpToLocationProps) => {
+  const map = useMap();
+
+  useEffect(() => {
+    map.flyTo([Number(latitude), Number(longitude)], 13, { duration: 2 });
+  }, [latitude, longitude, map]);
+
+  return null;
+};
 
 const Map = () => {
+  const { searchLocation } = useSearchContext();
   useEffect(() => {
-    // Fix default icon issue with type assertion
-    if (L.Icon.Default) {
-      // Ensure _getIconUrl is defined before deleting it
-      delete (L.Icon.Default as { _getIconUrl?: () => string | undefined })
-        ._getIconUrl;
-
-      L.Icon.Default.mergeOptions({
-        iconRetinaUrl: "/leaflet/marker-icon-2x.png",
-        iconUrl: "/leaflet/marker-icon.png",
-        shadowUrl: "/leaflet/marker-shadow.png",
-      });
-    }
-  }, []);
+    console.log(searchLocation);
+  }, [searchLocation]);
 
   return (
     <MapContainer
-      center={[51.505, -0.09]}
+      center={[27.7048, 85.3095]}
       zoom={13}
       className="outline-none rounded-xl box-shadow-2"
-      style={{ height: "450px", width: "98%" }}
+      style={{ height: "500px", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={[51.505, -0.09]}>
+      {searchLocation && (
+        <JumpToLocation
+          latitude={searchLocation.latitude}
+          longitude={searchLocation.longitude}
+        />
+      )}
+      <Marker position={[27.7048, 85.3095]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>

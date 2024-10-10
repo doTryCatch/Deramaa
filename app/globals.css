@@ -21,7 +21,62 @@ body {
 
 /* scroll-bar css sytle here  */
 
-/* In your CSS file */
+/* check box style */
+
+/* Hide the default radio button */
+
+/* .options-container input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+} */
+
+/* Create the custom checkbox appearance */
+
+.options-container .checkmark {
+  display: inline-block;
+  width: 20px;
+  /* Width of the rectangular box */
+  height: 10px;
+  /* Height of the rectangular box */
+  border: 2px solid #000;
+  /* Border color */
+  border-radius: 3px;
+  /* Optional: slightly rounded corners */
+  margin-right: 8px;
+  /* Spacing between the checkbox and label */
+  vertical-align: middle;
+  /* Aligns with text */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+/* Change the checkmark when the radio is checked */
+
+.options-container input[type="radio"]:checked + .checkmark {
+  background-color: #000;
+  /* Background color when checked */
+}
+
+/* Create the check shape */
+
+.options-container input[type="radio"]:checked + .checkmark:after {
+  content: "";
+  display: block;
+  width: 8px;
+  /* Width of the inner check */
+  height: 4px;
+  /* Height of the inner check */
+  border: solid white;
+  /* Inner check color */
+  border-width: 0 2px 2px 0;
+  /* Create the check shape */
+  transform: rotate(45deg);
+  /* Rotate to make it look like a check */
+  position: relative;
+  top: 2px;
+  left: 6px;
+}
 
 /* swiper css */
 

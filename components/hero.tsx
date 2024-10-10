@@ -7,10 +7,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RoomCard from "./roomCard";
 import location from "@/app/json-data/locations.json";
+import { SearchProvider } from "@/app/context/searchLocation";
 function Hero() {
   const settings = {
     dots: false,
     infinite: false,
+    arrows: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -19,8 +21,8 @@ function Hero() {
     adaptiveHeight: true, // Adjusts height to fit the content
   };
   return (
-    <section className="hero m-2 flex gap-6">
-      <div className="hero-left-portion w-[30%]">
+    <section className="hero m-2  md:flex gap-6 h-full">
+      <div className="hero-left-portion md:w-[30%] md:my-0 -my-6">
         <div className="locations  ">
           <Slider {...settings} className="flex h-full  bg-transparent m-2">
             {location.locations.map((location) => (
@@ -33,12 +35,14 @@ function Hero() {
             ))}
           </Slider>
         </div>
-        <div className="rooms-blogs">
+        <div className="rooms-blogs md:h-[65vh] md:overflow-y-scroll ">
           <RoomCard />
         </div>
       </div>
-      <div className="hero-right-portion w-[70%] my-8">
-        <Map />
+      <div className="hero-right-portion w-[80%] my-4 ">
+        <SearchProvider>
+          <Map />
+        </SearchProvider>
       </div>
     </section>
   );
