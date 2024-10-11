@@ -1,188 +1,446 @@
 {
-  "rooms": [
-    {
-      "id": "1",
-      "card": {
-        "title": "Cozy Studio Apartment",
-        "shortDescription": "Modern studio in the city center.",
-        "price": 1200,
-        "currency": "USD",
-        "image": "https://house-diaries.com/wp-content/uploads/2020/07/rimage-17-4.jpg",
-        "ratings": {
-          "averageRating": 4.8,
-          "totalReviews": 120
-        }
-      },
-      "details": {
-        "description": "A modern studio apartment located in the heart of the city, perfect for singles or couples.",
-        "location": {
-          "address": "123 Main St, Downtown",
-          "city": "Metropolis",
-          "state": "NY",
-          "zipCode": "10001"
+    "rooms": [{
+            "id": "1",
+            "card": {
+                "title": "Cozy Studio Apartment",
+                "shortDescription": "Modern studio in the city center.",
+                "price": 1200,
+                "currency": "NPR",
+                "image": "https://house-diaries.com/wp-content/uploads/2020/07/rimage-17-4.jpg",
+                "ratings": {
+                    "averageRating": 4.8,
+                    "totalReviews": 120
+                }
+            },
+            "details": {
+                "description": "A modern studio apartment located in the heart of Kathmandu, perfect for singles or couples.",
+                "location": {
+                    "address": "Thamel, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44600",
+                    "latitude": 27.7149,
+                    "longitude": 85.324
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-01"
+                },
+                "amenities": [
+                    "Wi-Fi",
+                    "Air Conditioning",
+                    "Kitchen",
+                    "Laundry",
+                    "Parking"
+                ],
+                "images": [
+                    "https://example.com/images/room1_1.jpg",
+                    "https://example.com/images/room1_2.jpg"
+                ],
+                "host": {
+                    "name": "John Doe",
+                    "contact": {
+                        "phone": "+9771234567890",
+                        "email": "johndoe@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host1.jpg"
+                }
+            }
         },
-        "availability": {
-          "status": "available",
-          "availableFrom": "2024-10-01"
+        {
+            "id": "2",
+            "card": {
+                "title": "Spacious 2-Bedroom Apartment",
+                "shortDescription": "Ideal for families with great views.",
+                "price": 2200,
+                "currency": "NPR",
+                "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
+                "ratings": {
+                    "averageRating": 4.5,
+                    "totalReviews": 75
+                }
+            },
+            "details": {
+                "description": "A large apartment ideal for families or groups, with great views of the mountains.",
+                "location": {
+                    "address": "Boudhanath Stupa, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44600",
+                    "latitude": 27.7149,
+                    "longitude": 85.3404
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-11-01"
+                },
+                "amenities": [
+                    "Wi-Fi",
+                    "Air Conditioning",
+                    "Full Kitchen",
+                    "Pet Friendly",
+                    "Gym Access"
+                ],
+                "images": [
+                    "https://example.com/images/room2_1.jpg",
+                    "https://example.com/images/room2_2.jpg"
+                ],
+                "host": {
+                    "name": "Jane Smith",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "janesmith@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host2.jpg"
+                }
+            }
         },
-        "amenities": [
-          "Wi-Fi",
-          "Air Conditioning",
-          "Kitchen",
-          "Laundry",
-          "Parking"
-        ],
-        "images": [
-          "https://example.com/images/room1_1.jpg",
-          "https://example.com/images/room1_2.jpg"
-        ],
-        "host": {
-          "name": "John Doe",
-          "contact": {
-            "phone": "+1234567890",
-            "email": "johndoe@example.com"
-          },
-          "profileImage": "https://example.com/images/host1.jpg"
-        }
-      }
-    },
-    {
-      "id": "2",
-      "card": {
-        "title": "Spacious 2-Bedroom Apartment",
-        "shortDescription": "Ideal for families with great views.",
-        "price": 2200,
-        "currency": "USD",
-        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
-        "ratings": {
-          "averageRating": 4.5,
-          "totalReviews": 75
-        }
-      },
-      "details": {
-        "description": "A large apartment ideal for families or groups, with great views and nearby parks.",
-        "location": {
-          "address": "456 Elm St, Suburbia",
-          "city": "Metropolis",
-          "state": "NY",
-          "zipCode": "10002"
+        {
+            "id": "3",
+            "card": {
+                "title": "Luxury Penthouse Suite",
+                "shortDescription": "Elegant living with panoramic views.",
+                "price": 3500,
+                "currency": "NPR",
+                "image": "https://example.com/images/penthouse.jpg",
+                "ratings": {
+                    "averageRating": 4.9,
+                    "totalReviews": 60
+                }
+            },
+            "details": {
+                "description": "A luxurious penthouse suite with breathtaking views of the Kathmandu valley.",
+                "location": {
+                    "address": "Pulchowk, Lalitpur",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44700",
+                    "latitude": 27.6719,
+                    "longitude": 85.324
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-15"
+                },
+                "amenities": [
+                    "Wi-Fi",
+                    "Hot Tub",
+                    "Swimming Pool",
+                    "Gym Access",
+                    "Concierge Service"
+                ],
+                "images": [
+                    "https://example.com/images/room3_1.jpg",
+                    "https://example.com/images/room3_2.jpg"
+                ],
+                "host": {
+                    "name": "Alice Brown",
+                    "contact": {
+                        "phone": "+9771230987654",
+                        "email": "alicebrown@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host3.jpg"
+                }
+            }
         },
-        "availability": {
-          "status": "available",
-          "availableFrom": "2024-11-01"
+        {
+            "id": "4",
+            "card": {
+                "title": "Traditional Nepali Guesthouse",
+                "shortDescription": "Experience Nepali culture and hospitality.",
+                "price": 800,
+                "currency": "NPR",
+                "image": "https://example.com/images/guesthouse.jpg",
+                "ratings": {
+                    "averageRating": 4.7,
+                    "totalReviews": 45
+                }
+            },
+            "details": {
+                "description": "A charming guesthouse that offers a taste of traditional Nepali life.",
+                "location": {
+                    "address": "Bhaktapur Durbar Square, Bhaktapur",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44800",
+                    "latitude": 27.6719,
+                    "longitude": 85.4273
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-20"
+                },
+                "amenities": ["Wi-Fi", "Local Cuisine", "Garden", "Cultural Tours"],
+                "images": [
+                    "https://example.com/images/room4_1.jpg",
+                    "https://example.com/images/room4_2.jpg"
+                ],
+                "host": {
+                    "name": "Ramesh Thapa",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "rameshthapa@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host4.jpg"
+                }
+            }
         },
-        "amenities": [
-          "Wi-Fi",
-          "Air Conditioning",
-          "Full Kitchen",
-          "Pet Friendly",
-          "Gym Access"
-        ],
-        "images": [
-          "https://example.com/images/room2_1.jpg",
-          "https://example.com/images/room2_2.jpg"
-        ],
-        "host": {
-          "name": "Jane Smith",
-          "contact": {
-            "phone": "+0987654321",
-            "email": "janesmith@example.com"
-          },
-          "profileImage": "https://example.com/images/host2.jpg"
-        }
-      }
-    },
-    {
-      "id": "2",
-      "card": {
-        "title": "Spacious 2-Bedroom Apartment",
-        "shortDescription": "Ideal for families with great views.",
-        "price": 2200,
-        "currency": "USD",
-        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
-        "ratings": {
-          "averageRating": 4.5,
-          "totalReviews": 75
-        }
-      },
-      "details": {
-        "description": "A large apartment ideal for families or groups, with great views and nearby parks.",
-        "location": {
-          "address": "456 Elm St, Suburbia",
-          "city": "Metropolis",
-          "state": "NY",
-          "zipCode": "10002"
+        {
+            "id": "5",
+            "card": {
+                "title": "Modern Loft in Thamel",
+                "shortDescription": "Stylish loft with great nightlife access.",
+                "price": 1500,
+                "currency": "NPR",
+                "image": "https://example.com/images/loft.jpg",
+                "ratings": {
+                    "averageRating": 4.6,
+                    "totalReviews": 80
+                }
+            },
+            "details": {
+                "description": "A modern loft located in the vibrant Thamel area, perfect for nightlife lovers.",
+                "location": {
+                    "address": "Thamel, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44600",
+                    "latitude": 27.7159,
+                    "longitude": 85.324
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-05"
+                },
+                "amenities": ["Wi-Fi", "Air Conditioning", "Kitchen", "Laundry"],
+                "images": [
+                    "https://example.com/images/room5_1.jpg",
+                    "https://example.com/images/room5_2.jpg"
+                ],
+                "host": {
+                    "name": "Sita Sharma",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "sitasharma@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host5.jpg"
+                }
+            }
         },
-        "availability": {
-          "status": "available",
-          "availableFrom": "2024-11-01"
+        {
+            "id": "6",
+            "card": {
+                "title": "Charming Cottage",
+                "shortDescription": "A cozy retreat in nature.",
+                "price": 1000,
+                "currency": "NPR",
+                "image": "https://example.com/images/cottage.jpg",
+                "ratings": {
+                    "averageRating": 4.7,
+                    "totalReviews": 30
+                }
+            },
+            "details": {
+                "description": "A charming cottage surrounded by nature, perfect for a peaceful getaway.",
+                "location": {
+                    "address": "Nagarkot, Bhaktapur",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44800",
+                    "latitude": 27.6935,
+                    "longitude": 85.4443
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-10"
+                },
+                "amenities": ["Wi-Fi", "Mountain View", "Garden", "Fireplace"],
+                "images": [
+                    "https://example.com/images/room6_1.jpg",
+                    "https://example.com/images/room6_2.jpg"
+                ],
+                "host": {
+                    "name": "Kiran Khatri",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "kirankhatri@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host6.jpg"
+                }
+            }
         },
-        "amenities": [
-          "Wi-Fi",
-          "Air Conditioning",
-          "Full Kitchen",
-          "Pet Friendly",
-          "Gym Access"
-        ],
-        "images": [
-          "https://example.com/images/room2_1.jpg",
-          "https://example.com/images/room2_2.jpg"
-        ],
-        "host": {
-          "name": "Jane Smith",
-          "contact": {
-            "phone": "+0987654321",
-            "email": "janesmith@example.com"
-          },
-          "profileImage": "https://example.com/images/host2.jpg"
-        }
-      }
-    },
-    {
-      "id": "2",
-      "card": {
-        "title": "Spacious 2-Bedroom Apartment",
-        "shortDescription": "Ideal for families with great views.",
-        "price": 2200,
-        "currency": "USD",
-        "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/501430890.jpg?k=2f898daefe379a2ce31bf94977ce28f90d04b8f3909995e1b659015e890b1766&o=&hp=1",
-        "ratings": {
-          "averageRating": 4.5,
-          "totalReviews": 75
-        }
-      },
-      "details": {
-        "description": "A large apartment ideal for families or groups, with great views and nearby parks.",
-        "location": {
-          "address": "456 Elm St, Suburbia",
-          "city": "Metropolis",
-          "state": "NY",
-          "zipCode": "10002"
+        {
+            "id": "7",
+            "card": {
+                "title": "Luxury Villa with Pool",
+                "shortDescription": "Spacious villa with pool and garden.",
+                "price": 4000,
+                "currency": "NPR",
+                "image": "https://example.com/images/villa.jpg",
+                "ratings": {
+                    "averageRating": 5.0,
+                    "totalReviews": 20
+                }
+            },
+            "details": {
+                "description": "A luxurious villa with a private pool, garden, and spacious living areas.",
+                "location": {
+                    "address": "Lalitpur, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44700",
+                    "latitude": 27.6719,
+                    "longitude": 85.324
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-11-05"
+                },
+                "amenities": ["Wi-Fi", "Swimming Pool", "Garden", "Full Kitchen"],
+                "images": [
+                    "https://example.com/images/room7_1.jpg",
+                    "https://example.com/images/room7_2.jpg"
+                ],
+                "host": {
+                    "name": "Maya Gurung",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "mayagurung@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host7.jpg"
+                }
+            }
         },
-        "availability": {
-          "status": "available",
-          "availableFrom": "2024-11-01"
+        {
+            "id": "8",
+            "card": {
+                "title": "Economy Room in Thamel",
+                "shortDescription": "Budget-friendly room near attractions.",
+                "price": 600,
+                "currency": "NPR",
+                "image": "https://example.com/images/economy.jpg",
+                "ratings": {
+                    "averageRating": 4.2,
+                    "totalReviews": 50
+                }
+            },
+            "details": {
+                "description": "An affordable room located in Thamel, perfect for budget travelers.",
+                "location": {
+                    "address": "Thamel, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44600",
+                    "latitude": 27.7159,
+                    "longitude": 85.324
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-01"
+                },
+                "amenities": ["Wi-Fi", "Shared Kitchen", "Laundry", "Cleaning Service"],
+                "images": [
+                    "https://example.com/images/room8_1.jpg",
+                    "https://example.com/images/room8_2.jpg"
+                ],
+                "host": {
+                    "name": "Rajesh Bhatta",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "rajeshbhatta@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host8.jpg"
+                }
+            }
         },
-        "amenities": [
-          "Wi-Fi",
-          "Air Conditioning",
-          "Full Kitchen",
-          "Pet Friendly",
-          "Gym Access"
-        ],
-        "images": [
-          "https://example.com/images/room2_1.jpg",
-          "https://example.com/images/room2_2.jpg"
-        ],
-        "host": {
-          "name": "Jane Smith",
-          "contact": {
-            "phone": "+0987654321",
-            "email": "janesmith@example.com"
-          },
-          "profileImage": "https://example.com/images/host2.jpg"
+        {
+            "id": "9",
+            "card": {
+                "title": "Boutique Hotel Room",
+                "shortDescription": "Stylish room in a boutique hotel.",
+                "price": 1800,
+                "currency": "NPR",
+                "image": "https://example.com/images/boutique.jpg",
+                "ratings": {
+                    "averageRating": 4.8,
+                    "totalReviews": 25
+                }
+            },
+            "details": {
+                "description": "A stylish room in a boutique hotel with unique decor and personalized service.",
+                "location": {
+                    "address": "Bhaktapur Durbar Square, Bhaktapur",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44800",
+                    "latitude": 27.6719,
+                    "longitude": 85.4273
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-15"
+                },
+                "amenities": [
+                    "Wi-Fi",
+                    "Breakfast Included",
+                    "Spa Services",
+                    "Airport Transfer"
+                ],
+                "images": [
+                    "https://example.com/images/room9_1.jpg",
+                    "https://example.com/images/room9_2.jpg"
+                ],
+                "host": {
+                    "name": "Anita Koirala",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "anitakoirala@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host9.jpg"
+                }
+            }
+        },
+        {
+            "id": "10",
+            "card": {
+                "title": "Peaceful Retreat",
+                "shortDescription": "A serene place with beautiful gardens.",
+                "price": 950,
+                "currency": "NPR",
+                "image": "https://example.com/images/retreat.jpg",
+                "ratings": {
+                    "averageRating": 4.9,
+                    "totalReviews": 40
+                }
+            },
+            "details": {
+                "description": "A serene retreat surrounded by beautiful gardens, perfect for relaxation.",
+                "location": {
+                    "address": "Kopan Monastery Road, Kathmandu",
+                    "city": "Kathmandu",
+                    "state": "Bagmati",
+                    "zipCode": "44600",
+                    "latitude": 27.7067,
+                    "longitude": 85.3734
+                },
+                "availability": {
+                    "status": "available",
+                    "availableFrom": "2024-10-10"
+                },
+                "amenities": ["Wi-Fi", "Garden", "Yoga Classes", "Nature Trails"],
+                "images": [
+                    "https://example.com/images/room10_1.jpg",
+                    "https://example.com/images/room10_2.jpg"
+                ],
+                "host": {
+                    "name": "Sanjay Neupane",
+                    "contact": {
+                        "phone": "+9779876543210",
+                        "email": "sanjayneupane@example.com"
+                    },
+                    "profileImage": "https://example.com/images/host10.jpg"
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }

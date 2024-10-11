@@ -21,17 +21,18 @@ function SearchAndFilter() {
 
   // handle serach input
   const handleSearch = () => {
-    const data = mapLocationData.locations?.filter((elem) =>
-      elem.name.includes(searchedValue)
+    const data = mapLocationData.locations?.filter(
+      (elem) => elem.name == searchedValue
     );
-    setSearchLocation(data);
+
+    setSearchLocation(data[0]);
   };
   // filter the content on selected filter parameter
   // const filter=()=>{
   //logic for data fetching according to filter component
   // }
   //handle filter icon click event
-  const handleFiler = () => {
+  const handleFilter = () => {
     // console.log(isFilterClicked);
     setFilterClicked(isFilterClicked ? false : true);
   };
@@ -59,9 +60,7 @@ function SearchAndFilter() {
             alt="search-icon"
             width={30}
             height={30}
-            onClick={() => {
-              handleSearch();
-            }}
+            onClick={handleSearch}
           />
         </div>
       </div>
@@ -72,7 +71,7 @@ function SearchAndFilter() {
           width={20}
           height={20}
           onClick={() => {
-            handleFiler();
+            handleFilter();
           }}
           className="mr-4 py-2"
         />

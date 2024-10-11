@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useSearchContext } from "@/app/context/searchLocation";
 import MarkerIcon from "@/public/icon/locator.png";
+import Room from "@/app/json-data/rooms.json";
 import L from "leaflet";
 interface JumpToLocationProps {
   latitude: string;
@@ -13,7 +14,7 @@ const JumpToLocation = ({ latitude, longitude }: JumpToLocationProps) => {
   const map = useMap();
 
   useEffect(() => {
-    map.flyTo([Number(latitude), Number(longitude)], 13, { duration: 2 });
+    map.flyTo([Number(latitude), Number(longitude)], 17, { duration: 1 });
   }, [latitude, longitude, map]);
 
   return null;
@@ -21,6 +22,7 @@ const JumpToLocation = ({ latitude, longitude }: JumpToLocationProps) => {
 
 const Map = () => {
   const { searchLocation } = useSearchContext();
+
   const customIcon = new L.Icon({
     iconUrl: MarkerIcon.src,
     iconSize: [65, 65], // Adjust size as needed
@@ -33,8 +35,12 @@ const Map = () => {
 
   return (
     <MapContainer
-      center={[27.7048, 85.3095]}
-      zoom={13}
+      center={
+        searchLocation != null
+          ? [Number(searchLocation.latitude), Number(searchLocation.longitude)]
+          : [27.7048, 85.3095]
+      }
+      zoom={18}
       className="outline-none md:rounded-xl box-shadow-2"
       style={{ height: "505px", width: "100%" }}
     >
@@ -48,10 +54,52 @@ const Map = () => {
           longitude={searchLocation.longitude}
         />
       )}
-      <Marker position={[27.7048, 85.3095]} icon={customIcon}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
+      <Marker
+        position={
+          searchLocation != null
+            ? [
+                Number(searchLocation.latitude),
+                Number(searchLocation.longitude),
+              ]
+            : [27.7048, 85.3095]
+        }
+        icon={customIcon}
+      >
+        <Popup>Here is your Location</Popup>
+      </Marker>
+      {Room.rooms.length > 0
+        ? Room.rooms.map((room, index) => (
+            <Marker
+              position={
+                searchLocation != null
+                  ? [
+                      Number(searchLocation.latitude),
+                      Number(searchLocation.longitude),
+                    ]
+                  : [
+                      room.details.location.latitude,
+                      room.details.location.longitude,
+                    ]
+              }
+              icon={customIcon}
+              key={index}
+            >
+              <Popup>Here is your Location</Popup>
+            </Marker>
+          ))
+        : null}
+      <Marker
+        position={
+          searchLocation != null
+            ? [
+                Number(searchLocation.latitude),
+                Number(searchLocation.longitude),
+              ]
+            : [27.7048, 85.3095]
+        }
+        icon={customIcon}
+      >
+        <Popup>Here is your Location</Popup>
       </Marker>
     </MapContainer>
   );

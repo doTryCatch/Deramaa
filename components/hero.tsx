@@ -1,20 +1,33 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
+import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Chevron from "@/public/icon/chevron.png";
 import RoomCard from "./roomCard";
-import location from "@/app/json-data/locations.json";
-import { SearchProvider } from "@/app/context/searchLocation";
-
+import Location from "@/app/json-data/locations.json";
+import { useSearchContext } from "@/app/context/searchLocation";
 // Dynamic import for Map to prevent SSR issues
 const Map = dynamic(() => import("./map"), { ssr: false });
 
 function Hero() {
-  const [isToggle, setToggle] = useState(false);
+  const [isChevron, setChevron] = useState(false);
+  const { setSearchLocation } = useSearchContext();
   // Slider settings
-  const handleToggle = () => {
-    setToggle(!isToggle);
+  const handleChevron = () => {
+    setChevron(!isChevron);
+  };
+  const handleFilter = (name: string) => {
+    console.log(name);
+    const position = Location.locations.filter(
+      (place) => place.name == name
+    )[0];
+    if (position)
+      setSearchLocation({
+        latitude: position.latitude,
+        longitude: position.longitude,
+      });
   };
   const settings = {
     dots: false,
@@ -33,24 +46,32 @@ function Hero() {
       <div
         className={
           "hero-left-portion transition-all duration-150 md:w-[30%] -my-4 order-2 md:order-1 bg-white md:bg-none z-50 md:z-0 " +
-          (isToggle ? " -mt-4 md:-mt-0 " : " mt-[40vh] md:mt-0 rounded-t-3xl ")
+          (isChevron ? " -mt-4 md:-mt-0 " : " mt-[40vh] md:mt-0 rounded-t-3xl ")
         }
       >
         <div
-          className="verticalToggle center md:hidden"
+          className="chevron center md:hidden "
           onClick={() => {
-            handleToggle();
+            handleChevron();
           }}
         >
-          <strong>^</strong>
+          <Image
+            src={Chevron}
+            alt="chevron-icon"
+            width={20}
+            height={20}
+            className={"mt-2 " + (isChevron ? " rotate-0" : "rotate-180")}
+          />
         </div>
         {/* Locations Slider */}
         <div className="locations md:mx-0 mx-4">
           <Slider {...settings} className="flex h-full bg-transparent m-2">
-            {location.locations.map((loc) => (
+            {Location.locations.map((loc, key) => (
               <div
-                key={loc.id}
+                key={key}
                 className="location h-8 px-4 cursor-pointer rounded-3xl bg-white shadow-md"
+                defaultValue={loc.name}
+                onClick={() => handleFilter(loc.name)}
               >
                 <span className="center w-full h-full">{loc.name}</span>
               </div>
@@ -59,7 +80,7 @@ function Hero() {
         </div>
 
         {/* Rooms and Blogs */}
-        <div className="rooms-blogs h-[64vh] overflow-y-scroll mt-4 mx-4 md:mx-0">
+        <div className="rooms-blogs h-[62vh] overflow-y-scroll mt-4 mx-4 md:mx-0">
           <RoomCard />
         </div>
       </div>
@@ -70,9 +91,7 @@ function Hero() {
           "hero-right-portion md:flex  w-full md:w-[70%]  order-1 md:order-2 absolute md:relative  z-10 md:z-0 -mt-4 md:-mt-0"
         }
       >
-        <SearchProvider>
-          <Map />
-        </SearchProvider>
+        <Map />
       </div>
     </section>
   );

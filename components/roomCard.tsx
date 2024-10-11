@@ -1,6 +1,9 @@
 import React from "react";
 import room from "@/app/json-data/rooms.json";
 import Link from "next/link";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+
 const RoomCard = () => {
   return (
     <div className="rooms-container md:p-2 space-y-8 ">
@@ -30,10 +33,24 @@ const RoomCard = () => {
               </div>
 
               <div className="text-xs text-gray-600">
-                <p>
-                  Rating: {room.card.ratings.averageRating} (
-                  {room.card.ratings.totalReviews} reviews)
-                </p>
+                <Box
+                  sx={{ "& > legend": { mt: 2 } }}
+                  className="flex justify-between "
+                >
+                  <div className="rating center text-lg space-x-2">
+                    <span>{room.card.ratings.averageRating}</span>
+                    <Rating
+                      name="read-only"
+                      value={room.card.ratings.averageRating}
+                      readOnly
+                      precision={0.2}
+                    />
+                  </div>
+                  <span className="flex justify-between">
+                    ({room.card.ratings.totalReviews} reviews)
+                  </span>
+                </Box>
+
                 <p>Amenities: {room.details.amenities.join(", ")}</p>
               </div>
             </div>

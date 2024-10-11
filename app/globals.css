@@ -2,28 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --background: 238, 252, 250;
+    --background: 238, 252, 250;
 }
+
 
 /* background-color EEFCFA */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background-start-rgb: 0, 0, 0;
-  }
+     :root {
+        --background-start-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background));
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background));
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 /* scroll-bar css sytle here  */
 
+
 /* check box style */
 
+
 /* Hide the default radio button */
+
 
 /* .options-container input[type="radio"] {
   position: absolute;
@@ -31,63 +36,68 @@ body {
   cursor: pointer;
 } */
 
+
 /* Create the custom checkbox appearance */
 
 .options-container .checkmark {
-  display: inline-block;
-  width: 20px;
-  /* Width of the rectangular box */
-  height: 10px;
-  /* Height of the rectangular box */
-  border: 2px solid #000;
-  /* Border color */
-  border-radius: 3px;
-  /* Optional: slightly rounded corners */
-  margin-right: 8px;
-  /* Spacing between the checkbox and label */
-  vertical-align: middle;
-  /* Aligns with text */
-  cursor: pointer;
-  /* Pointer cursor on hover */
+    display: inline-block;
+    width: 20px;
+    /* Width of the rectangular box */
+    height: 10px;
+    /* Height of the rectangular box */
+    border: 2px solid #000;
+    /* Border color */
+    border-radius: 3px;
+    /* Optional: slightly rounded corners */
+    margin-right: 8px;
+    /* Spacing between the checkbox and label */
+    vertical-align: middle;
+    /* Aligns with text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
 }
+
 
 /* Change the checkmark when the radio is checked */
 
-.options-container input[type="radio"]:checked + .checkmark {
-  background-color: #000;
-  /* Background color when checked */
+.options-container input[type="radio"]:checked+.checkmark {
+    background-color: #000;
+    /* Background color when checked */
 }
+
 
 /* Create the check shape */
 
-.options-container input[type="radio"]:checked + .checkmark:after {
-  content: "";
-  display: block;
-  width: 8px;
-  /* Width of the inner check */
-  height: 4px;
-  /* Height of the inner check */
-  border: solid white;
-  /* Inner check color */
-  border-width: 0 2px 2px 0;
-  /* Create the check shape */
-  transform: rotate(45deg);
-  /* Rotate to make it look like a check */
-  position: relative;
-  top: 2px;
-  left: 6px;
+.options-container input[type="radio"]:checked+.checkmark:after {
+    content: "";
+    display: block;
+    width: 8px;
+    /* Width of the inner check */
+    height: 4px;
+    /* Height of the inner check */
+    border: solid white;
+    /* Inner check color */
+    border-width: 0 2px 2px 0;
+    /* Create the check shape */
+    transform: rotate(45deg);
+    /* Rotate to make it look like a check */
+    position: relative;
+    top: 2px;
+    left: 6px;
 }
+
 
 /* swiper css */
 
 .slick-slide {
-  margin-left: 10px;
-  margin-right: 10px;
-  white-space: nowrap;
-  padding: 10px 0px;
-  max-width: 1200px;
-  min-width: fit-content;
+    margin-left: 10px;
+    margin-right: 10px;
+    white-space: nowrap;
+    padding: 10px 0px;
+    max-width: 1200px;
+    min-width: fit-content;
 }
+
 
 /* .slick-slide > div {
   max-width: 1200px;
@@ -96,39 +106,36 @@ body {
   width: fit-content;
 } */
 
+
 /* In your CSS file */
 
+
 /* page content css  */
+
 
 /* In your global CSS file */
 
 .navbar-container,
 .filters {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .box-shadow {
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .box-shadow-2 {
-  box-shadow:
-    rgba(0, 0, 0, 0.16) 0px 3px 6px,
-    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
