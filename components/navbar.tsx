@@ -14,7 +14,7 @@ function Navbar() {
     <section className="navbar-container  sticky top-0  z-50  bg-white">
       <div className="container">
         <nav className="navbar flex items-center text-black justify-between h-auto  w-full">
-          <div className="navbar-logo bg-pink-200 flex justify-center items-center md:flex-grow md:h-[10vh] h-[6vh] ml-6 md:ml-0 md:w-[20rem] w-auto p-3">
+          <div className="navbar-logo flex justify-center items-center md:flex-grow md:h-[10vh] h-[6vh] ml-6 md:ml-0 md:w-[20rem] w-auto p-3">
             <img
               src="next.svg"
               alt="Logo"

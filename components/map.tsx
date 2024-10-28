@@ -14,6 +14,7 @@ const JumpToLocation = ({ latitude, longitude }: JumpToLocationProps) => {
   const map = useMap();
 
   useEffect(() => {
+    // jump to next location transition
     map.flyTo([Number(latitude), Number(longitude)], 17, { duration: 1 });
   }, [latitude, longitude, map]);
 
@@ -41,8 +42,7 @@ const Map = () => {
           : [27.7048, 85.3095]
       }
       zoom={18}
-      className="outline-none md:rounded-xl box-shadow-2"
-      style={{ height: "505px", width: "100%" }}
+      className="outline-none md:rounded-xl box-shadow-2 md:h-[510px] w-full h-[100vh]"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

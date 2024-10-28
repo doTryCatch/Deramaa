@@ -1,14 +1,14 @@
 import React from "react";
 import room from "@/app/json-data/rooms.json";
 import Link from "next/link";
-import Box from "@mui/material/Box";
-import Rating from "@mui/material/Rating";
-
+import { FaBath, FaBed } from "react-icons/fa";
+import { FiGrid } from "react-icons/fi";
+import { MdOutlineMeetingRoom } from "react-icons/md";
 const RoomCard = () => {
   return (
-    <div className="rooms-container md:p-2 space-y-8 ">
+    <div className="rooms-container flex flex-col md:p-2 space-y-8  ">
       {room.rooms.map((room, key) => (
-        <Link href={"/rooms/" + key}>
+        <Link href={"/rooms/" + key} key={key}>
           <div
             className="border border-gray-300 bg-white rounded-lg shadow-md overflow-hidden  w-full cursor-pointer"
             key={key}
@@ -32,26 +32,25 @@ const RoomCard = () => {
                 </p>
               </div>
 
-              <div className="text-xs text-gray-600">
-                <Box
-                  sx={{ "& > legend": { mt: 2 } }}
-                  className="flex justify-between "
-                >
-                  <div className="rating center text-lg space-x-2">
-                    <span>{room.card.ratings.averageRating}</span>
-                    <Rating
-                      name="read-only"
-                      value={room.card.ratings.averageRating}
-                      readOnly
-                      precision={0.2}
-                    />
+              <div className="text-sm text-gray-600 ">
+                <div className="flex items-center justify-between mt-4  text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <FiGrid />
+                    <span>{50} m²</span>
                   </div>
-                  <span className="flex justify-between">
-                    ({room.card.ratings.totalReviews} reviews)
-                  </span>
-                </Box>
-
-                <p>Amenities: {room.details.amenities.join(", ")}</p>
+                  <div className="flex items-center space-x-2">
+                    <MdOutlineMeetingRoom />
+                    <span>{"Room"}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FaBed />
+                    <span>{2}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FaBath />
+                    <span>{"2-Attached"}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

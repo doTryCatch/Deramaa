@@ -42,19 +42,12 @@ body {
 .options-container .checkmark {
     display: inline-block;
     width: 20px;
-    /* Width of the rectangular box */
     height: 10px;
-    /* Height of the rectangular box */
     border: 2px solid #000;
-    /* Border color */
     border-radius: 3px;
-    /* Optional: slightly rounded corners */
     margin-right: 8px;
-    /* Spacing between the checkbox and label */
     vertical-align: middle;
-    /* Aligns with text */
     cursor: pointer;
-    /* Pointer cursor on hover */
 }
 
 
@@ -72,15 +65,10 @@ body {
     content: "";
     display: block;
     width: 8px;
-    /* Width of the inner check */
     height: 4px;
-    /* Height of the inner check */
     border: solid white;
-    /* Inner check color */
     border-width: 0 2px 2px 0;
-    /* Create the check shape */
     transform: rotate(45deg);
-    /* Rotate to make it look like a check */
     position: relative;
     top: 2px;
     left: 6px;
@@ -104,6 +92,25 @@ body {
   margin-left: 0 20px;
   padding: 10px 0px;
   width: fit-content;
+} */
+
+
+/* leaflet zoom ui style */
+
+.leaflet-control-zoom {
+    top: 140px;
+}
+
+
+/* dark theme of map  */
+
+
+/* .leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    color: white;
 } */
 
 

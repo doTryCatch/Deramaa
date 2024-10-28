@@ -311,6 +311,7 @@
                 }
             }
         },
+
         {
             "id": "8",
             "card": {
@@ -324,6 +325,7 @@
                     "totalReviews": 50
                 }
             },
+
             "details": {
                 "description": "An affordable room located in Thamel, perfect for budget travelers.",
                 "location": {

@@ -8,6 +8,7 @@ import Chevron from "@/public/icon/chevron.png";
 import RoomCard from "./roomCard";
 import Location from "@/app/json-data/locations.json";
 import { useSearchContext } from "@/app/context/searchLocation";
+import Filter from "./filter";
 // Dynamic import for Map to prevent SSR issues
 const Map = dynamic(() => import("./map"), { ssr: false });
 
@@ -41,12 +42,14 @@ function Hero() {
   };
 
   return (
-    <section className="hero md:m-2 flex flex-col md:flex-row  md:flex gap-6 h-full ">
+    <section className="hero md:m-2 flex  flex-col md:flex md:flex-row   gap-6 ">
       {/* Left Portion */}
       <div
         className={
-          "hero-left-portion transition-all duration-150 md:w-[30%] -my-4 order-2 md:order-1 bg-white md:bg-none z-50 md:z-0 " +
-          (isChevron ? " -mt-4 md:-mt-0 " : " mt-[40vh] md:mt-0 rounded-t-3xl ")
+          "hero-left-portion  transition-all duration-700 md:w-[30%]  -my-4 order-2 md:order-1 bg-white md:bg-none z-40 md:z-0 " +
+          (isChevron
+            ? " mt-[15%] md:-mt-0 "
+            : " mt-[90%] md:mt-0 rounded-t-3xl ")
         }
       >
         <div
@@ -60,12 +63,15 @@ function Hero() {
             alt="chevron-icon"
             width={20}
             height={20}
-            className={"mt-2 " + (isChevron ? " rotate-0" : "rotate-180")}
+            className={"m-2 " + (isChevron ? " rotate-0" : "rotate-180")}
           />
+        </div>
+        <div className="filter md:hidden -mt-2">
+          <Filter />
         </div>
         {/* Locations Slider */}
         <div className="locations md:mx-0 mx-4">
-          <Slider {...settings} className="flex h-full bg-transparent m-2">
+          <Slider {...settings} className="flex h-full bg-transparent ">
             {Location.locations.map((loc, key) => (
               <div
                 key={key}
@@ -80,7 +86,7 @@ function Hero() {
         </div>
 
         {/* Rooms and Blogs */}
-        <div className="rooms-blogs h-[62vh] overflow-y-scroll mt-4 mx-4 md:mx-0">
+        <div className="rooms-blogs h-[62vh] overflow-y-scroll mt-4 mx-4 md:mx-0 ">
           <RoomCard />
         </div>
       </div>
@@ -88,7 +94,7 @@ function Hero() {
       {/* Right Portion - Desktop Map */}
       <div
         className={
-          "hero-right-portion md:flex  w-full md:w-[70%]  order-1 md:order-2 absolute md:relative  z-10 md:z-0 -mt-4 md:-mt-0"
+          "hero-right-portion md:flex  w-full md:w-[70%]  order-1 md:order-2 fixed md:relative  md:-mt-2 top-0  z-20 md:z-0 "
         }
       >
         <Map />

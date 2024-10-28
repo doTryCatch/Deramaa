@@ -16,6 +16,7 @@ export default function Home() {
     <main className="main-body-container">
       <SearchProvider>
         <SearchAndFilters />
+
         <Hero />
       </SearchProvider>
     </main>
