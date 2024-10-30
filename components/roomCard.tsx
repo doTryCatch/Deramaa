@@ -1,9 +1,11 @@
 import React from "react";
 import room from "@/app/json-data/rooms.json";
 import Link from "next/link";
-import { FaBath, FaBed } from "react-icons/fa";
-import { FiGrid } from "react-icons/fi";
-import { MdOutlineMeetingRoom } from "react-icons/md";
+import Area from "@/public/area.svg";
+import Bed from "@/public/bedRoom.svg";
+import Attached from "@/public/Attached.svg";
+
+import Room from "@/public/Room.svg";
 const RoomCard = () => {
   return (
     <div className="rooms-container flex flex-col md:p-2 space-y-8  ">
@@ -35,19 +37,19 @@ const RoomCard = () => {
               <div className="text-sm text-gray-600 ">
                 <div className="flex items-center justify-between mt-4  text-gray-600">
                   <div className="flex items-center space-x-2">
-                    <FiGrid />
+                    <Area />
                     <span>{50} m²</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <MdOutlineMeetingRoom />
+                    <Room />
                     <span>{"Room"}</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <FaBed />
+                    <Bed />
                     <span>{2}</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <FaBath />
+                    <Attached />
                     <span>{"2-Attached"}</span>
                   </div>
                 </div>

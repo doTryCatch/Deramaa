@@ -42,7 +42,7 @@ function Filter() {
   };
   return (
     <div className="filter-container  ">
-      <div className="filter-icon flex justify-end md:hidden ">
+      <div className="filter-icon flex justify-end md:hidden">
         <Image
           src={"https://cdn-icons-png.flaticon.com/128/9702/9702724.png"}
           alt="filter"
@@ -56,7 +56,7 @@ function Filter() {
       </div>
       <div
         className={
-          "filter-container md:flex md:space-x-6  md:w-[70%] " +
+          "filter-container md:flex  md:w-[70%]  md:space-x-6" +
           (isFilterClicked ? "grid grid-cols-2 gap-4" : " hidden")
         }
       >

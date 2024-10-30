@@ -2,33 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    --background: 238, 252, 250;
+  --background: 249, 251, 255;
 }
-
 
 /* background-color EEFCFA */
 
 @media (prefers-color-scheme: dark) {
-     :root {
-        --background-start-rgb: 0, 0, 0;
-    }
+  :root {
+    --background-start-rgb: 0, 0, 0;
+  }
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background));
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background));
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.join {
+  /* Join */
+  width: 100px;
+  height: 34px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  /* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+  font-variant: small-caps;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-variant: small-caps;
+  color: #002b6d;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.deramaa {
+  /* Dimensions */
+  width: 123px;
+  height: 20px;
+  /* Font Styles */
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  font-variant: small-caps;
+  /* Color */
+  color: #002b6d;
+  /* Flexbox Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centers text horizontally */
+  text-align: center;
+  /* Flex Order */
+  order: 1;
+  flex-grow: 0;
+}
+
+img,
+Image {
+  object-fit: contain;
+}
 
 /* scroll-bar css sytle here  */
 
-
 /* check box style */
 
-
 /* Hide the default radio button */
-
 
 /* .options-container input[type="radio"] {
   position: absolute;
@@ -36,56 +85,56 @@ body {
   cursor: pointer;
 } */
 
+details summary {
+  list-style-type: none;
+  /* Hides default dropdown in most browsers */
+}
 
 /* Create the custom checkbox appearance */
 
 .options-container .checkmark {
-    display: inline-block;
-    width: 20px;
-    height: 10px;
-    border: 2px solid #000;
-    border-radius: 3px;
-    margin-right: 8px;
-    vertical-align: middle;
-    cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
 }
-
 
 /* Change the checkmark when the radio is checked */
 
-.options-container input[type="radio"]:checked+.checkmark {
-    background-color: #000;
-    /* Background color when checked */
+.options-container input[type="radio"]:checked + .checkmark {
+  background-color: #000;
+  /* Background color when checked */
 }
-
 
 /* Create the check shape */
 
-.options-container input[type="radio"]:checked+.checkmark:after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 4px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    position: relative;
-    top: 2px;
-    left: 6px;
+.options-container input[type="radio"]:checked + .checkmark:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 4px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: relative;
+  top: 2px;
+  left: 6px;
 }
-
 
 /* swiper css */
 
 .slick-slide {
-    margin-left: 10px;
-    margin-right: 10px;
-    white-space: nowrap;
-    padding: 10px 0px;
-    max-width: 1200px;
-    min-width: fit-content;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+  padding: 10px 0px;
+  max-width: 1200px;
+  min-width: fit-content;
 }
-
 
 /* .slick-slide > div {
   max-width: 1200px;
@@ -94,16 +143,13 @@ body {
   width: fit-content;
 } */
 
-
 /* leaflet zoom ui style */
 
 .leaflet-control-zoom {
-    top: 140px;
+  top: 140px;
 }
 
-
 /* dark theme of map  */
-
 
 /* .leaflet-layer,
 .leaflet-control-zoom-in,
@@ -113,36 +159,39 @@ body {
     color: white;
 } */
 
-
 /* In your CSS file */
 
-
 /* page content css  */
-
 
 /* In your global CSS file */
 
 .navbar-container,
 .filters {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .box-shadow {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .box-shadow-2 {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+  .text-balance {
+    text-wrap: balance;
+  }
 }

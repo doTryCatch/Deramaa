@@ -1,9 +1,11 @@
 "use client";
-import { Inter } from "next/font/google";
+
+import { Lexend } from "next/font/google";
 import "./globals.css";
+import "./globalicons.css"; //
 import Navbar from "@/components/navbar";
-import { usePathname } from "next/navigation";
-const inter = Inter({ subsets: ["latin"] });
+
+const lexend = Lexend({ subsets: ["latin"] });
 
 const metadata = {
   title: "Deramaa",
@@ -15,8 +17,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const showNavbar = pathname !== "/login";
   return (
     <html lang="en">
       <head>
@@ -24,9 +24,9 @@ export default function RootLayout({
         <meta name="description" content={metadata.description} />
       </head>
 
-      <body className={inter.className}>
-        <div className="content w-full">
-          {showNavbar && <Navbar />}
+      <body className={lexend.className}>
+        <div className="content w-">
+          {<Navbar />}
           {children}
         </div>
       </body>

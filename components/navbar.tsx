@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import DeramaaLogo from "@/public/Deramaa.svg";
 function Navbar() {
   const [isNav, setNav] = useState(false);
   const handleNavIconClick = () => {
@@ -14,12 +14,9 @@ function Navbar() {
     <section className="navbar-container  sticky top-0  z-50  bg-white">
       <div className="container">
         <nav className="navbar flex items-center text-black justify-between h-auto  w-full">
-          <div className="navbar-logo flex justify-center items-center md:flex-grow md:h-[10vh] h-[6vh] ml-6 md:ml-0 md:w-[20rem] w-auto p-3">
-            <img
-              src="next.svg"
-              alt="Logo"
-              style={{ width: "100%", height: "70%" }}
-            />
+          <div className="navbar-logo center space-x-2 md:flex-grow md:h-[10vh] h-[6vh] ml-6 md:ml-0 md:w-[20rem] w-auto p-3">
+            <DeramaaLogo />
+            <span className="deramaa mt-3">Deramaa</span>
           </div>
           <div className="md:flex-grow mr-6 md:mr-0">
             <div className="navToggle md:hidden">
@@ -64,7 +61,7 @@ function Navbar() {
               Post Demand
             </button>
             <button className="navbar-signin-btn bg-blue-900 hover:bg-white hover:text-blue-950 border-2 border-solid border-blue-950 text-white px-8 py-1 flex-row-reverse rounded-full">
-              Sign In
+              <Link href={"/login/phase1"}>Sign In</Link>
             </button>
           </div>
         </nav>
