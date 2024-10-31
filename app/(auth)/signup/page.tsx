@@ -71,14 +71,14 @@ const Register: React.FC = () => {
           </h1>
           <h1 className="deramaa mt-8 ml-3">Deramaa</h1>
         </div>
-        <div className="slogan center mt-2">
+        <div className="slogan center">
           <h1>Get Started Now</h1>
         </div>
         <h1 className="my-2 center text-[24px]">Register</h1>
 
         <div className="input-container space-y-4">
           <div className="center">
-            <fieldset className="border border-solid px-4 rounded-md h-[9vh] w-[70%]">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
               <legend>Name</legend>
               <input
                 type="text"
@@ -91,7 +91,7 @@ const Register: React.FC = () => {
           </div>
 
           <div className="center">
-            <fieldset className="border border-solid  px-4 rounded-md h-[9vh] w-[70%]">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
               <legend>Phone No. / Email</legend>
               <input
                 type="text"
@@ -104,7 +104,7 @@ const Register: React.FC = () => {
           </div>
 
           <div className="center">
-            <fieldset className="border border-solid  px-4 rounded-md h-[9vh] w-[70%]">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
               <legend>Password</legend>
               <input
                 type="password"
@@ -117,7 +117,7 @@ const Register: React.FC = () => {
           </div>
 
           <div className="center">
-            <fieldset className="border border-solid  px-4 rounded-md h-[9vh] w-[70%]">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
               <legend>Re-enter Password</legend>
               <input
                 type="password"
