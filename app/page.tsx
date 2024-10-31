@@ -6,11 +6,11 @@ import Hero from "@/components/hero";
 import { SearchProvider } from "@/app/context/searchLocation";
 
 export default function Home() {
-  const Login = true;
+  const SignIn = true;
   const router = useRouter();
   useEffect(() => {
-    if (!Login) router.push("/login");
-  }, [router, Login]);
+    if (!SignIn) router.push("/singin");
+  }, [router, SignIn]);
 
   return (
     <main className="main-body-container">

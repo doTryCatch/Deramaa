@@ -10,7 +10,7 @@ export default async function middleware(req: NextRequest) {
 
   // If the token is invalid or missing, redirect to login page
   if (!user) {
-    return NextResponse.redirect(new URL("/login", req.url));
+    return NextResponse.redirect(new URL("/signin", req.url));
   }
   // Attach user to request for use in the application
   return NextResponse.next();

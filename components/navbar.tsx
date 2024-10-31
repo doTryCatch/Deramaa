@@ -61,7 +61,7 @@ function Navbar() {
               Post Demand
             </button>
             <button className="navbar-signin-btn bg-blue-900 hover:bg-white hover:text-blue-950 border-2 border-solid border-blue-950 text-white px-8 py-1 flex-row-reverse rounded-full">
-              <Link href={"/login/phase1"}>Sign In</Link>
+              <Link href={"/signin"}>Sign In</Link>
             </button>
           </div>
         </nav>
