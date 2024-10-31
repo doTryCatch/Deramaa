@@ -76,7 +76,7 @@ const Login: React.FC = () => {
         <div className="slogan center">
           <h1>Get Started Now</h1>
         </div>
-        <h1 className="my-2 center">Login</h1>
+        <h1 className="my-2 center text-[24px]">Login</h1>
 
         {/* Toggle between Email and Phone login */}
         <div className="toggle-login-method center space-x-4 mb-4">
