@@ -1,6 +1,6 @@
 // pages/room.js
-
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Area from "@/public/area.svg";
 import Bed from "@/public/bedRoom.svg";
 import Attached from "@/public/Attached.svg";
@@ -8,6 +8,7 @@ import Slider from "@/components/slidler";
 import Room from "@/public/Room.svg";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import ImageCard from "@/components/imageSlider";
 const Map = dynamic(() => import("@/components/map"), { ssr: false });
 
 // Mocked data (Replace this with real API call or props data)
@@ -73,10 +74,12 @@ const roomData = {
 };
 
 const RoomDetails = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>();
+  const [isImageCardOpen, setImageCardStatus] = useState<boolean>(false);
+
   return (
     <div className="bg-gray-50 mx-3">
       {/* Image Gallery Section */}
-      <div className="image-pop-up absolute w-full h-full bg-black opacity-40 top-0 left-0 z-50 hidden"></div>
 
       <div className="w-full mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
@@ -88,6 +91,10 @@ const RoomDetails = () => {
               layout="fill"
               objectFit="cover"
               className="rounded-lg"
+              onClick={() => {
+                setCurrentImageIndex(0);
+                setImageCardStatus(true);
+              }}
             />
           </div>
 
@@ -96,7 +103,7 @@ const RoomDetails = () => {
             {roomData.images.gallery.slice(0, 4).map((img, index) => (
               <div
                 key={index}
-                className="bg-gray-300 rounded-lg h-[29vh] relative"
+                className="bg-gray-300 rounded-lg h-[29vh] relative cursor-pointer"
               >
                 <Image
                   src={img}
@@ -104,11 +111,22 @@ const RoomDetails = () => {
                   layout="fill"
                   objectFit="cover"
                   className="rounded-lg"
+                  onClick={() => {
+                    setCurrentImageIndex(index + 1);
+
+                    setImageCardStatus(true);
+                  }}
                 />
                 {/* Overlay for extra images */}
                 {index === 3 && roomData.images.gallery.length > 4 && (
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
-                    <span className="text-white text-xl font-bold">
+                  <div
+                    className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg select-none"
+                    onClick={() => {
+                      setCurrentImageIndex(index + 1);
+                      setImageCardStatus(true);
+                    }}
+                  >
+                    <span className="text-white text-xl font-bold ">
                       +{roomData.images.gallery.length - 4} more
                     </span>
                   </div>
@@ -118,7 +136,11 @@ const RoomDetails = () => {
           </div>
         </div>
       </div>
-
+      <ImageCard
+        images={roomData.images}
+        currentImageIndex={currentImageIndex}
+        state={isImageCardOpen}
+      />
       {/* Main Content */}
       <div className="justify-between">
         <div className="flex-1">

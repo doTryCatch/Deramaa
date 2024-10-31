@@ -53,6 +53,16 @@ Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
     flex-grow: 0;
 }
 
+.image-card .slick-dots li ::before {
+    opacity: 100%;
+    color: #fff;
+}
+
+.image-card .slick-dots .slick-active ::before {
+    opacity: 100%;
+    color: rgb(233, 77, 103);
+}
+
 .deramaa {
     /* Dimensions */
     width: 123px;
@@ -144,7 +154,7 @@ details summary {
 
 /* swiper css */
 
-.slick-slide {
+.locations .slick-slide {
     margin-left: 10px;
     margin-right: 10px;
     white-space: nowrap;
