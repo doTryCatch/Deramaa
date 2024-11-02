@@ -83,7 +83,7 @@ export default function OTP() {
   };
 
   return (
-    <div className="register-phase-1 m-6 w-[100%] center">
+    <div className="signup m-6 w-[100%] center">
       {showPopup && (
         <div className="alert-box fixed top-[12vh] right-10 border bg-white z-50 rounded-lg shadow-md flex items-center px-6 py-3 space-x-4">
           <div className="parent-circle w-7 h-7 center rounded-full bg-red-700">
@@ -97,7 +97,7 @@ export default function OTP() {
         </div>
       )}
 
-      <div className="container">
+      <div className="container mr-[85px]">
         <div className="heading-container flex center">
           <h1 className="mt-4 flex space-x-2">
             <p className="join mt-1 text-[38px]">Join</p>
@@ -105,7 +105,7 @@ export default function OTP() {
           </h1>
           <h1 className="deramaa mt-8 ml-3">Deramaa</h1>
         </div>
-        <div className="center mt-2">
+        <div className="center mt-2 mb-6">
           <h1>Get Started Now</h1>
         </div>
         <h1 className="slogan my-2 center text-[24px] ">Enter OTP</h1>

@@ -9,7 +9,7 @@ export default function Home() {
   const SignIn = true;
   const router = useRouter();
   useEffect(() => {
-    if (!SignIn) router.push("/singin");
+    if (!SignIn) router.push("/signin");
   }, [router, SignIn]);
 
   return (
