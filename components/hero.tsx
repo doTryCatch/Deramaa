@@ -23,10 +23,10 @@ function Hero() {
       {/* Left Portion */}
       <div
         className={
-          "hero-left-portion  transition-all duration-700 md:w-[30%]  -my-4 order-2 md:order-1  md:bg-none z-40 md:z-0 " +
+          "hero-left-portion   transition-all duration-700 md:w-[30%]  -my-4 order-2 md:order-1  md:bg-none z-40 md:z-0 bg-white " +
           (isChevron
-            ? " mt-[15%] md:-mt-0 "
-            : " mt-[90%] md:mt-0 rounded-t-3xl ")
+            ? " mt-[5vh] md:-mt-0 "
+            : " mt-[63vh] md:mt-0 rounded-t-3xl ")
         }
       >
         <div
@@ -40,7 +40,7 @@ function Hero() {
             alt="chevron-icon"
             width={20}
             height={20}
-            className={"m-2 " + (isChevron ? " rotate-0" : "rotate-180")}
+            className={"my-4  " + (isChevron ? " rotate-0" : "rotate-180")}
           />
         </div>
         <div className="filter md:hidden -mt-2">
@@ -50,7 +50,7 @@ function Hero() {
         <Slider slide_number={3} />
 
         {/* Rooms and Blogs */}
-        <div className="rooms-blogs h-[62vh] overflow-y-scroll mt-4 mx-4 md:mx-0 ">
+        <div className="rooms-blogs h-[65vh] overflow-y-scroll mt-4 mx-4 md:mx-0 ">
           <RoomCard />
         </div>
       </div>

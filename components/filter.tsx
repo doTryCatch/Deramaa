@@ -27,10 +27,11 @@ function Filter() {
       Price: "",
       Room: "",
     } as FiltersType); // set default filter for the page
+
   const handleFilter = () => {
-    // console.log(isFilterClicked);
-    setFilterClicked(isFilterClicked ? false : true);
+    setFilterClicked((prevState) => !prevState);
   };
+
   //handle filter options clicked
   const handleInput = (data: DataEvent) => {
     if (filters) {
@@ -41,23 +42,21 @@ function Filter() {
     console.log(filters);
   };
   return (
-    <div className="filter-container  ">
-      <div className="filter-icon flex justify-end md:hidden">
+    <div className="filter-container ">
+      <div className="filter-icon flex justify-end md:hidden absolute -mt-10 right-2 ">
         <Image
           src={"https://cdn-icons-png.flaticon.com/128/9702/9702724.png"}
           alt="filter"
           width={20}
           height={20}
-          onClick={() => {
-            handleFilter();
-          }}
-          className="mr-4 py-2"
+          onClick={handleFilter}
+          className="mr-4 py-2 "
         />
       </div>
       <div
         className={
           "filter-container md:flex  md:w-[70%]  md:space-x-6" +
-          (isFilterClicked ? "grid grid-cols-2 gap-4" : " hidden")
+          (isFilterClicked ? " grid grid-cols-2 gap-4" : " hidden")
         }
       >
         {Filters.Items.map((filter) => (

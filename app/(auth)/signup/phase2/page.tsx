@@ -5,32 +5,33 @@ import DeramaaLogo from "@/public/Deramaa.svg";
 import Link from "next/link";
 
 const Registration: React.FC = () => {
-  const [identifier, setIdentifier] = useState<string>("");
-
+  const identifier: { name: string; value: number } = {
+    name: "Phone",
+    value: 9821164640,
+  };
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [errors, setErrors] = useState<{
-    identifier?: string;
     password?: string;
+    confirmPassword?: string;
   }>({});
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const router = useRouter();
 
-  const validateEmail = (email: string): boolean => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
-
   const handleRegistration = (): void => {
-    const currentErrors: { identifier?: string; password?: string } = {};
+    const currentErrors: {
+      password?: string;
+      confirmPassword?: string;
+    } = {};
 
-    if (!identifier) {
-      currentErrors.identifier = "This field cannot be empty.";
-    } else if (/^\d+$/.test(identifier)) {
-      if (identifier.length != 10) {
-        currentErrors.identifier =
-          "Phone number should be at least 10 digits !";
-      }
-    } else if (!validateEmail(identifier)) {
-      currentErrors.identifier = "Please enter a valid emai !";
+    if (!password) {
+      currentErrors.password = "Password cannot be empty.";
+    } else if (password.length < 6) {
+      currentErrors.password = "Password must be at least 6 characters long.";
+    }
+
+    if (password !== confirmPassword) {
+      currentErrors.confirmPassword = "Passwords do not match.";
     }
 
     setErrors(currentErrors);
@@ -39,8 +40,9 @@ const Registration: React.FC = () => {
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
     } else {
-      console.log("Form submitted:", { identifier });
-      router.push("/signup/phase1"); // Navigate to signin/phase1
+      console.log("Registration successful:", { identifier, password });
+      // Handle successful registration, e.g., API call
+      router.push("/welcome"); // Navigate to a welcome page or dashboard
     }
   };
 
@@ -54,7 +56,7 @@ const Registration: React.FC = () => {
             </div>
           </div>
           <span className="text-red-700 font-bold text-[14px]">
-            {errors.identifier || errors.password}
+            {errors.password || errors.confirmPassword}
           </span>
         </div>
       )}
@@ -71,39 +73,64 @@ const Registration: React.FC = () => {
           <h1>Get Started Now</h1>
         </div>
         <span className="slogan my-2 center text-[24px] font-r">
-          Enter your Phone Number{" "}
+          Final Phase of Registration
         </span>
 
         <div className="input-container space-y-4">
           <div className="center">
             <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
-              <legend>Email or Phone</legend>
+              <legend>{identifier.name}</legend>
               <input
                 type="text"
-                placeholder="Enter your email or phone number"
-                value={identifier}
+                placeholder="Email or phone number"
+                value={identifier.value}
+                className="h-[90%] w-full border-none outline-none"
+                readOnly // Assuming you want to keep this field read-only
+              />
+            </fieldset>
+          </div>
+          <div className="center">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
+              <legend>Password</legend>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setIdentifier(e.target.value)
+                  setPassword(e.target.value)
                 }
                 className="h-[90%] w-full border-none outline-none"
               />
             </fieldset>
           </div>
-
+          <div className="center">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
+              <legend>Re-enter Password</legend>
+              <input
+                type="password"
+                placeholder="Re-enter your password"
+                value={confirmPassword}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setConfirmPassword(e.target.value)
+                }
+                className="h-[90%] w-full border-none outline-none"
+              />
+            </fieldset>
+          </div>
           <div className="button center">
             <button
               onClick={handleRegistration}
               className="w-[70%] bg-blue-900 p-3 rounded-md text-white"
             >
-              Request OTP
+              Register
             </button>
           </div>
         </div>
 
         <span className="center mt-4">
           Already have an account?
-          <Link href="/signup" className="ml-1 underline text-blue-500">
-            SignIn
+          <Link href="/signin" className="ml-1 underline text-blue-500">
+            Sign in
           </Link>
         </span>
       </div>

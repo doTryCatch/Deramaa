@@ -2,14 +2,14 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import DeramaaLogo from "@/public/Deramaa.svg";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function OTP() {
-  // Define the types for state
+  const router = useRouter();
   const [otp, setOtp] = useState<string[]>(Array(6).fill(""));
   const [errors, setErrors] = useState<{ OTP?: string }>({});
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const [resendTimer, setResendTimer] = useState<number>(1); // Timer in seconds
+  const [resendTimer, setResendTimer] = useState<number>(60); // Timer in seconds
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
@@ -61,14 +61,21 @@ export default function OTP() {
     if (otpString.length < 6) {
       setErrors({ OTP: "Please enter a complete OTP." });
       setShowPopup(true);
+
+      // Hide the popup after 2 seconds
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2000);
+
       return;
     }
-    // Submit OTP logic goes here
+    // submit opt logic will be here
     console.log("Submitted OTP:", otpString);
+    router.push("/signup/phase2");
   };
 
   const handleResendOtp = () => {
-    setResendTimer(60); // Reset timer for 60 seconds
+    setResendTimer(60);
     setOtp(Array(6).fill("")); // Clear OTP inputs
     inputRefs.current[0]?.focus(); // Focus on the first input
     setErrors({});
@@ -129,22 +136,25 @@ export default function OTP() {
             onClick={handleSubmit}
             className="w-[70%] bg-blue-900 p-3 rounded-md text-white"
           >
-            Submit
+            Continue
           </button>
         </div>
 
-        <span className="center">
+        <div className="center">
           Didn't Receive OTP? Resend OTP in{" "}
-          <Link href="/signin" className="ml-1 underline text-blue-500">
-            {resendTimer > 0 ? (
-              `${resendTimer} sec`
-            ) : (
-              <span onClick={handleResendOtp} className="cursor-pointer">
-                1.2 <span>sec</span>
-              </span>
-            )}
-          </Link>
-        </span>
+          {resendTimer > 0 ? (
+            <span className="ml-1 underline text-blue-500">
+              {resendTimer} sec
+            </span>
+          ) : (
+            <span
+              onClick={handleResendOtp}
+              className="cursor-pointer text-blue-500 ml-1 underline"
+            >
+              Resend
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
