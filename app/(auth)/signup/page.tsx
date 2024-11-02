@@ -71,7 +71,7 @@ const Registration: React.FC = () => {
           <h1>Get Started Now</h1>
         </div>
         <span className="slogan my-2 center text-[24px] ">
-          Enter your Phone Number{" "}
+          Enter Credentials{" "}
         </span>
 
         <div className="input-container space-y-4">
@@ -102,7 +102,7 @@ const Registration: React.FC = () => {
 
         <span className="center mt-4">
           Already have an account?
-          <Link href="/signup" className="ml-1 underline text-blue-500">
+          <Link href="/signin" className="ml-1 underline text-blue-500">
             SignIn
           </Link>
         </span>
