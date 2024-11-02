@@ -71,7 +71,7 @@ export default function OTP() {
     }
     // submit opt logic will be here
     console.log("Submitted OTP:", otpString);
-    router.push("/signup/phase2");
+    router.push("/");
   };
 
   const handleResendOtp = () => {
