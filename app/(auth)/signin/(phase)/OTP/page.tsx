@@ -83,7 +83,7 @@ export default function OTP() {
   };
 
   return (
-    <div className="signup m-6 w-[100%] center">
+    <div className="signup md:m-6 w-[100%] center">
       {showPopup && (
         <div className="alert-box fixed top-[12vh] right-10 border bg-white z-50 rounded-lg shadow-md flex items-center px-6 py-3 space-x-4">
           <div className="parent-circle w-7 h-7 center rounded-full bg-red-700">
@@ -97,7 +97,7 @@ export default function OTP() {
         </div>
       )}
 
-      <div className="container mr-[85px]">
+      <div className="container md:mr-[85px]">
         <div className="heading-container flex center">
           <h1 className="mt-4 flex space-x-2">
             <p className="join mt-1 text-[38px]">Join</p>
@@ -116,7 +116,7 @@ export default function OTP() {
                 <input
                   type="text"
                   maxLength={1}
-                  className="h-14 w-14 text-center outline-none"
+                  className="h-12 w-12 md:h-14 md:w-14 text-center outline-none"
                   ref={(el) => {
                     inputRefs.current[index] = el;
                   }}
@@ -134,13 +134,13 @@ export default function OTP() {
         <div className="button center">
           <button
             onClick={handleSubmit}
-            className="w-[70%] bg-blue-900 p-3 rounded-md text-white"
+            className="w-[90%] md:w-[70%] bg-blue-900 p-3 rounded-md text-white"
           >
             Continue
           </button>
         </div>
 
-        <div className="center">
+        <div className="center my-4">
           Didn't Receive OTP? Resend OTP in{" "}
           {resendTimer > 0 ? (
             <span className="ml-1 underline text-blue-500">

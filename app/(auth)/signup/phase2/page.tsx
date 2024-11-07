@@ -47,7 +47,7 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div className="signup m-6 w-[100%] center">
+    <div className="signup md:m-6 w-[100%] center">
       {showPopup && (
         <div className="alert-box fixed top-24 right-10 border bg-white z-50 rounded-lg shadow-md flex items-center px-6 py-3 space-x-4">
           <div className="parent-circle w-7 h-7 center rounded-full bg-red-700">
@@ -61,7 +61,7 @@ const Registration: React.FC = () => {
         </div>
       )}
 
-      <div className="container mr-[85px]">
+      <div className="container md:mr-[85px]">
         <div className="heading-container flex center">
           <h1 className="mt-4 flex space-x-2">
             <p className="join mt-1 text-[38px]">Join</p>
@@ -76,9 +76,9 @@ const Registration: React.FC = () => {
           Set Your Password
         </span>
 
-        <div className="input-container space-y-4">
+        <div className="input-container space-y-4 my-6">
           <div className="center">
-            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[90%] md:w-[70%]">
               <legend>{identifier.name}</legend>
               <input
                 type="text"
@@ -89,8 +89,8 @@ const Registration: React.FC = () => {
               />
             </fieldset>
           </div>
-          <div className="center">
-            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
+          <div className="center ">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[90%] md:w-[70%]">
               <legend>Password</legend>
               <input
                 type="password"
@@ -103,8 +103,8 @@ const Registration: React.FC = () => {
               />
             </fieldset>
           </div>
-          <div className="center">
-            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[70%]">
+          <div className="center ">
+            <fieldset className="border border-solid border-gray-600 px-4 rounded-md h-[9vh] w-[90%] md:w-[70%]">
               <legend>Re-enter Password</legend>
               <input
                 type="password"
@@ -120,7 +120,7 @@ const Registration: React.FC = () => {
           <div className="button center">
             <button
               onClick={handleRegistration}
-              className="w-[70%] bg-blue-900 p-3 rounded-md text-white"
+              className=" w-[90%] md:w-[70%] bg-blue-900 p-3 rounded-md text-white"
             >
               Register
             </button>
